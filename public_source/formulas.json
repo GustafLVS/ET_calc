@@ -1,0 +1,1627 @@
+{
+  "categories": [
+    {
+      "name": "Ohmsches Gesetz",
+      "id": "ohm",
+      "circuit_type": "ohm",
+      "formulas": [
+        {
+          "id": "ohm_u",
+          "name": "Spannung  U = I × R",
+          "solve_for": "U",
+          "expression": "I * R",
+          "chain_formula": "U = I × R",
+          "display_template": "U = {I} × {R}",
+          "variables": [
+            {"name": "I", "unit": "A", "description": "Stromstärke"},
+            {"name": "R", "unit": "Ω", "description": "Widerstand"}
+          ],
+          "result_unit": "V",
+          "result_description": "Spannung",
+          "steps": [
+            "Ohmsches Gesetz:  U = I × R",
+            "Einsetzen:  U = {I} A × {R} Ω",
+            "Berechnung:  U = {result} V"
+          ]
+        },
+        {
+          "id": "ohm_i",
+          "name": "Strom  I = U / R",
+          "solve_for": "I",
+          "expression": "U / R",
+          "chain_formula": "I = U / R",
+          "display_template": "I = {U} / {R}",
+          "variables": [
+            {"name": "U", "unit": "V", "description": "Spannung"},
+            {"name": "R", "unit": "Ω", "description": "Widerstand"}
+          ],
+          "result_unit": "A",
+          "result_description": "Stromstärke",
+          "steps": [
+            "Ohmsches Gesetz (umgestellt):  I = U / R",
+            "Einsetzen:  I = {U} V / {R} Ω",
+            "Berechnung:  I = {result} A"
+          ]
+        },
+        {
+          "id": "ohm_r",
+          "name": "Widerstand  R = U / I",
+          "solve_for": "R",
+          "expression": "U / I",
+          "chain_formula": "R = U / I",
+          "display_template": "R = {U} / {I}",
+          "variables": [
+            {"name": "U", "unit": "V", "description": "Spannung"},
+            {"name": "I", "unit": "A", "description": "Stromstärke"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Widerstand",
+          "steps": [
+            "Ohmsches Gesetz (umgestellt):  R = U / I",
+            "Einsetzen:  R = {U} V / {I} A",
+            "Berechnung:  R = {result} Ω"
+          ]
+        },
+        {
+          "id": "ohm_g",
+          "name": "Leitwert  G = 1 / R",
+          "solve_for": "G",
+          "expression": "1 / R",
+          "chain_formula": "G = 1 / R",
+          "display_template": "G = 1 / {R}",
+          "variables": [
+            {"name": "R", "unit": "Ω", "description": "Widerstand"}
+          ],
+          "result_unit": "S",
+          "result_description": "Leitwert (Siemens)",
+          "steps": [
+            "Leitwert:  G = 1 / R",
+            "Einsetzen:  G = 1 / {R} Ω",
+            "Berechnung:  G = {result} S"
+          ]
+        },
+        {
+          "id": "ohm_r_from_g",
+          "name": "Widerstand aus Leitwert  R = 1 / G",
+          "solve_for": "R",
+          "expression": "1 / G",
+          "chain_formula": "R = 1 / G",
+          "display_template": "R = 1 / {G}",
+          "variables": [
+            {"name": "G", "unit": "S", "description": "Leitwert"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Widerstand",
+          "steps": [
+            "Widerstand aus Leitwert:  R = 1 / G",
+            "Einsetzen:  R = 1 / {G} S",
+            "Berechnung:  R = {result} Ω"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Elektrische Grundgrößen",
+      "id": "basics",
+      "circuit_type": "ohm",
+      "formulas": [
+        {
+          "id": "basics_i_qt",
+          "name": "Stromstärke  I = Q / t",
+          "solve_for": "I",
+          "expression": "Q / t",
+          "chain_formula": "I = Q / t",
+          "display_template": "I = {Q} / {t}",
+          "variables": [
+            {"name": "Q", "unit": "C", "description": "Ladung"},
+            {"name": "t", "unit": "s", "description": "Zeit"}
+          ],
+          "result_unit": "A",
+          "result_description": "Stromstärke",
+          "steps": [
+            "Definition der Stromstärke:  I = Q / t",
+            "Einsetzen:  I = {Q} C / {t} s",
+            "Berechnung:  I = {result} A"
+          ]
+        },
+        {
+          "id": "basics_q_it",
+          "name": "Ladung  Q = I × t",
+          "solve_for": "Q",
+          "expression": "I * t",
+          "chain_formula": "Q = I × t",
+          "display_template": "Q = {I} × {t}",
+          "variables": [
+            {"name": "I", "unit": "A", "description": "Stromstärke"},
+            {"name": "t", "unit": "s", "description": "Zeit"}
+          ],
+          "result_unit": "C",
+          "result_description": "Ladung (Coulomb)",
+          "steps": [
+            "Ladungsberechnung:  Q = I × t",
+            "Einsetzen:  Q = {I} A × {t} s",
+            "Berechnung:  Q = {result} C"
+          ]
+        },
+        {
+          "id": "basics_t_qi",
+          "name": "Zeit  t = Q / I",
+          "solve_for": "t",
+          "expression": "Q / I",
+          "chain_formula": "t = Q / I",
+          "display_template": "t = {Q} / {I}",
+          "variables": [
+            {"name": "Q", "unit": "C", "description": "Ladung"},
+            {"name": "I", "unit": "A", "description": "Stromstärke"}
+          ],
+          "result_unit": "s",
+          "result_description": "Zeit",
+          "steps": [
+            "Umgestellt nach t:  t = Q / I",
+            "Einsetzen:  t = {Q} C / {I} A",
+            "Berechnung:  t = {result} s"
+          ]
+        },
+        {
+          "id": "basics_j_ia",
+          "name": "Stromdichte  J = I / A",
+          "solve_for": "J",
+          "expression": "I / A",
+          "chain_formula": "J = I / A",
+          "display_template": "J = {I} / {A}",
+          "variables": [
+            {"name": "I", "unit": "A", "description": "Stromstärke"},
+            {"name": "A", "unit": "m²", "description": "Querschnittsfläche"}
+          ],
+          "result_unit": "A/m²",
+          "result_description": "Stromdichte",
+          "steps": [
+            "Stromdichte:  J = I / A",
+            "Einsetzen:  J = {I} A / {A} m²",
+            "Berechnung:  J = {result} A/m²"
+          ]
+        },
+        {
+          "id": "basics_i_ja",
+          "name": "Strom  I = J × A",
+          "solve_for": "I",
+          "expression": "J * A",
+          "chain_formula": "I = J × A",
+          "display_template": "I = {J} × {A}",
+          "variables": [
+            {"name": "J", "unit": "A/m²", "description": "Stromdichte"},
+            {"name": "A", "unit": "m²", "description": "Querschnittsfläche"}
+          ],
+          "result_unit": "A",
+          "result_description": "Stromstärke",
+          "steps": [
+            "Strom aus Stromdichte:  I = J × A",
+            "Einsetzen:  I = {J} A/m² × {A} m²",
+            "Berechnung:  I = {result} A"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Elektrische Leistung",
+      "id": "power",
+      "circuit_type": "power",
+      "formulas": [
+        {
+          "id": "power_p_ui",
+          "name": "Leistung  P = U × I",
+          "solve_for": "P",
+          "expression": "U * I",
+          "chain_formula": "P = U × I",
+          "display_template": "P = {U} × {I}",
+          "variables": [
+            {"name": "U", "unit": "V", "description": "Spannung"},
+            {"name": "I", "unit": "A", "description": "Stromstärke"}
+          ],
+          "result_unit": "W",
+          "result_description": "Leistung",
+          "steps": [
+            "Elektrische Leistung:  P = U × I",
+            "Einsetzen:  P = {U} V × {I} A",
+            "Berechnung:  P = {result} W"
+          ]
+        },
+        {
+          "id": "power_p_i2r",
+          "name": "Leistung  P = I² × R",
+          "solve_for": "P",
+          "expression": "I * I * R",
+          "chain_formula": "P = I² × R",
+          "display_template": "P = {I}² × {R}",
+          "variables": [
+            {"name": "I", "unit": "A", "description": "Stromstärke"},
+            {"name": "R", "unit": "Ω", "description": "Widerstand"}
+          ],
+          "result_unit": "W",
+          "result_description": "Leistung",
+          "steps": [
+            "Leistungsformel:  P = I² × R",
+            "Quadrat:  I² = {I_sq} A²",
+            "Einsetzen:  P = {I_sq} A² × {R} Ω",
+            "Berechnung:  P = {result} W"
+          ]
+        },
+        {
+          "id": "power_p_u2r",
+          "name": "Leistung  P = U² / R",
+          "solve_for": "P",
+          "expression": "U * U / R",
+          "chain_formula": "P = U² / R",
+          "display_template": "P = {U}² / {R}",
+          "variables": [
+            {"name": "U", "unit": "V", "description": "Spannung"},
+            {"name": "R", "unit": "Ω", "description": "Widerstand"}
+          ],
+          "result_unit": "W",
+          "result_description": "Leistung",
+          "steps": [
+            "Leistungsformel:  P = U² / R",
+            "Quadrat:  U² = {U_sq} V²",
+            "Einsetzen:  P = {U_sq} V² / {R} Ω",
+            "Berechnung:  P = {result} W"
+          ]
+        },
+        {
+          "id": "power_u_from_pr",
+          "name": "Spannung  U = √(P × R)",
+          "solve_for": "U",
+          "expression": "sqrt(P * R)",
+          "chain_formula": "U = √(P × R)",
+          "display_template": "U = √({P} × {R})",
+          "variables": [
+            {"name": "P", "unit": "W", "description": "Leistung"},
+            {"name": "R", "unit": "Ω", "description": "Widerstand"}
+          ],
+          "result_unit": "V",
+          "result_description": "Spannung",
+          "steps": [
+            "Aus P = U²/R umgestellt:  U = √(P × R)",
+            "Produkt:  P × R = {P_times_R}",
+            "Berechnung:  U = {result} V"
+          ]
+        },
+        {
+          "id": "power_i_from_pr",
+          "name": "Strom  I = √(P / R)",
+          "solve_for": "I",
+          "expression": "sqrt(P / R)",
+          "chain_formula": "I = √(P / R)",
+          "display_template": "I = √({P} / {R})",
+          "variables": [
+            {"name": "P", "unit": "W", "description": "Leistung"},
+            {"name": "R", "unit": "Ω", "description": "Widerstand"}
+          ],
+          "result_unit": "A",
+          "result_description": "Stromstärke",
+          "steps": [
+            "Aus P = I²×R umgestellt:  I = √(P / R)",
+            "Einsetzen:  I = √({P} W / {R} Ω)",
+            "Berechnung:  I = {result} A"
+          ]
+        },
+        {
+          "id": "power_r_from_ui",
+          "name": "Widerstand  R = U² / P",
+          "solve_for": "R",
+          "expression": "U * U / P",
+          "chain_formula": "R = U² / P",
+          "display_template": "R = {U}² / {P}",
+          "variables": [
+            {"name": "U", "unit": "V", "description": "Spannung"},
+            {"name": "P", "unit": "W", "description": "Leistung"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Widerstand",
+          "steps": [
+            "Aus P = U²/R umgestellt:  R = U² / P",
+            "Quadrat:  U² = {U_sq} V²",
+            "Berechnung:  R = {result} Ω"
+          ]
+        },
+        {
+          "id": "power_u_from_pi",
+          "name": "Spannung  U = P / I",
+          "solve_for": "U",
+          "expression": "P / I",
+          "chain_formula": "U = P / I",
+          "display_template": "U = {P} / {I}",
+          "variables": [
+            {"name": "P", "unit": "W", "description": "Leistung"},
+            {"name": "I", "unit": "A", "description": "Stromstärke"}
+          ],
+          "result_unit": "V",
+          "result_description": "Spannung",
+          "steps": [
+            "Aus P = U×I umgestellt:  U = P / I",
+            "Einsetzen:  U = {P} W / {I} A",
+            "Berechnung:  U = {result} V"
+          ]
+        },
+        {
+          "id": "power_i_from_pu",
+          "name": "Strom  I = P / U",
+          "solve_for": "I",
+          "expression": "P / U",
+          "chain_formula": "I = P / U",
+          "display_template": "I = {P} / {U}",
+          "variables": [
+            {"name": "P", "unit": "W", "description": "Leistung"},
+            {"name": "U", "unit": "V", "description": "Spannung"}
+          ],
+          "result_unit": "A",
+          "result_description": "Stromstärke",
+          "steps": [
+            "Aus P = U×I umgestellt:  I = P / U",
+            "Einsetzen:  I = {P} W / {U} V",
+            "Berechnung:  I = {result} A"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Spezifischer Widerstand",
+      "id": "rho",
+      "circuit_type": "ohm",
+      "formulas": [
+        {
+          "id": "rho_r",
+          "name": "Widerstand  R = ρ × l / A",
+          "solve_for": "R",
+          "expression": "rho * l / A",
+          "chain_formula": "R = ρ × l / A",
+          "display_template": "R = {rho} × {l} / {A}",
+          "variables": [
+            {"name": "rho", "unit": "Ω·m", "description": "spezifischer Widerstand"},
+            {"name": "l",   "unit": "m",   "description": "Leiterlänge"},
+            {"name": "A",   "unit": "m²",  "description": "Querschnittsfläche"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Leiterwiderstand",
+          "steps": [
+            "Leiterwiderstand:  R = ρ × l / A",
+            "Einsetzen:  R = {rho} Ω·m × {l} m / {A} m²",
+            "Berechnung:  R = {result} Ω"
+          ]
+        },
+        {
+          "id": "rho_rho",
+          "name": "Spez. Widerstand  ρ = R × A / l",
+          "solve_for": "rho",
+          "expression": "R * A / l",
+          "chain_formula": "ρ = R × A / l",
+          "display_template": "ρ = {R} × {A} / {l}",
+          "variables": [
+            {"name": "R", "unit": "Ω",  "description": "Widerstand"},
+            {"name": "A", "unit": "m²", "description": "Querschnittsfläche"},
+            {"name": "l", "unit": "m",  "description": "Leiterlänge"}
+          ],
+          "result_unit": "Ω·m",
+          "result_description": "Spezifischer Widerstand",
+          "steps": [
+            "Spezifischer Widerstand:  ρ = R × A / l",
+            "Einsetzen:  ρ = {R} Ω × {A} m² / {l} m",
+            "Berechnung:  ρ = {result} Ω·m"
+          ]
+        },
+        {
+          "id": "rho_l",
+          "name": "Länge  l = R × A / ρ",
+          "solve_for": "l",
+          "expression": "R * A / rho",
+          "chain_formula": "l = R × A / ρ",
+          "display_template": "l = {R} × {A} / {rho}",
+          "variables": [
+            {"name": "R",   "unit": "Ω",   "description": "Widerstand"},
+            {"name": "A",   "unit": "m²",  "description": "Querschnittsfläche"},
+            {"name": "rho", "unit": "Ω·m", "description": "Spezifischer Widerstand"}
+          ],
+          "result_unit": "m",
+          "result_description": "Leiterlänge",
+          "steps": [
+            "Leiterlänge:  l = R × A / ρ",
+            "Einsetzen:  l = {R} Ω × {A} m² / {rho} Ω·m",
+            "Berechnung:  l = {result} m"
+          ]
+        },
+        {
+          "id": "rho_a",
+          "name": "Querschnitt  A = ρ × l / R",
+          "solve_for": "A",
+          "expression": "rho * l / R",
+          "chain_formula": "A = ρ × l / R",
+          "display_template": "A = {rho} × {l} / {R}",
+          "variables": [
+            {"name": "rho", "unit": "Ω·m", "description": "Spezifischer Widerstand"},
+            {"name": "l",   "unit": "m",   "description": "Leiterlänge"},
+            {"name": "R",   "unit": "Ω",   "description": "Widerstand"}
+          ],
+          "result_unit": "m²",
+          "result_description": "Querschnittsfläche",
+          "steps": [
+            "Querschnitt:  A = ρ × l / R",
+            "Einsetzen:  A = {rho} Ω·m × {l} m / {R} Ω",
+            "Berechnung:  A = {result} m²"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Widerstandsänderung",
+      "id": "rtemp",
+      "circuit_type": "ohm",
+      "formulas": [
+        {
+          "id": "rtemp_dr",
+          "name": "ΔR = R₀ × α × ΔT",
+          "solve_for": "dR",
+          "expression": "R0 * alpha * dT",
+          "chain_formula": "ΔR = R₀ × α × ΔT",
+          "display_template": "ΔR = {R0} × {alpha} × {dT}",
+          "variables": [
+            {"name": "R0",    "unit": "Ω",   "description": "Widerstand bei 20 °C"},
+            {"name": "alpha", "unit": "1/K",  "description": "Temperaturkoeffizient α"},
+            {"name": "dT",    "unit": "K",    "description": "Temperaturänderung ΔT"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Widerstandsänderung",
+          "steps": [
+            "Widerstandsänderung:  ΔR = R₀ × α × ΔT",
+            "Einsetzen:  ΔR = {R0} Ω × {alpha} 1/K × {dT} K",
+            "Produkt α×ΔT = {alpha_dT}",
+            "Berechnung:  ΔR = {result} Ω"
+          ]
+        },
+        {
+          "id": "rtemp_rw",
+          "name": "Warmwiderstand  Rw = R₀ × (1 + α × ΔT)",
+          "solve_for": "Rw",
+          "expression": "R0 * (1 + alpha * dT)",
+          "chain_formula": "Rw = R₀ × (1 + α×ΔT)",
+          "display_template": "Rw = {R0} × (1 + {alpha} × {dT})",
+          "variables": [
+            {"name": "R0",    "unit": "Ω",   "description": "Widerstand bei 20 °C"},
+            {"name": "alpha", "unit": "1/K",  "description": "Temperaturkoeffizient α"},
+            {"name": "dT",    "unit": "K",    "description": "Temperaturänderung ΔT"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Warmwiderstand",
+          "steps": [
+            "Warmwiderstand:  Rw = R₀ × (1 + α × ΔT)",
+            "Einsetzen:  Rw = {R0} Ω × (1 + {alpha} × {dT})",
+            "α×ΔT = {alpha_dT}",
+            "Berechnung:  Rw = {result} Ω"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Reihenschaltung",
+      "id": "series",
+      "circuit_type": "series",
+      "formulas": [
+        {
+          "id": "series_r",
+          "name": "Gesamtwiderstand (2 Widerstände)",
+          "solve_for": "R_ges",
+          "expression": "R1 + R2",
+          "chain_formula": "R_ges = R1 + R2",
+          "display_template": "R_ges = {R1} + {R2}",
+          "variables": [
+            {"name": "R1", "unit": "Ω", "description": "Widerstand 1"},
+            {"name": "R2", "unit": "Ω", "description": "Widerstand 2"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Gesamtwiderstand",
+          "steps": [
+            "Reihenschaltung:  R_ges = R1 + R2",
+            "Einsetzen:  R_ges = {R1} Ω + {R2} Ω",
+            "Berechnung:  R_ges = {result} Ω"
+          ]
+        },
+        {
+          "id": "series_r3",
+          "name": "Gesamtwiderstand (3 Widerstände)",
+          "solve_for": "R_ges",
+          "expression": "R1 + R2 + R3",
+          "chain_formula": "R_ges = R1 + R2 + R3",
+          "display_template": "R_ges = {R1} + {R2} + {R3}",
+          "variables": [
+            {"name": "R1", "unit": "Ω", "description": "Widerstand 1"},
+            {"name": "R2", "unit": "Ω", "description": "Widerstand 2"},
+            {"name": "R3", "unit": "Ω", "description": "Widerstand 3"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Gesamtwiderstand",
+          "steps": [
+            "Reihenschaltung:  R_ges = R1 + R2 + R3",
+            "Einsetzen:  R_ges = {R1} + {R2} + {R3} Ω",
+            "Berechnung:  R_ges = {result} Ω"
+          ]
+        },
+        {
+          "id": "series_u",
+          "name": "Gesamtspannung (Reihe)",
+          "solve_for": "U_ges",
+          "expression": "U1 + U2",
+          "chain_formula": "U_ges = U1 + U2",
+          "display_template": "U_ges = {U1} + {U2}",
+          "variables": [
+            {"name": "U1", "unit": "V", "description": "Teilspannung 1"},
+            {"name": "U2", "unit": "V", "description": "Teilspannung 2"}
+          ],
+          "result_unit": "V",
+          "result_description": "Gesamtspannung",
+          "steps": [
+            "Maschensatz (KVL):  U_ges = U1 + U2",
+            "Einsetzen:  U_ges = {U1} V + {U2} V",
+            "Berechnung:  U_ges = {result} V"
+          ]
+        },
+        {
+          "id": "series_vdiv",
+          "name": "Spannungsteiler  U1 = U_ges × R1/(R1+R2)",
+          "solve_for": "U1",
+          "expression": "Uges * R1 / (R1 + R2)",
+          "chain_formula": "U1 = U_ges × R1/(R1+R2)",
+          "display_template": "U1 = {Uges} × {R1}/(R1+{R2})",
+          "variables": [
+            {"name": "Uges", "unit": "V", "description": "Gesamtspannung"},
+            {"name": "R1",   "unit": "Ω", "description": "Widerstand 1 (oberer)"},
+            {"name": "R2",   "unit": "Ω", "description": "Widerstand 2 (unterer)"}
+          ],
+          "result_unit": "V",
+          "result_description": "Teilspannung an R1",
+          "steps": [
+            "Spannungsteiler:  U1 = U_ges × R1 / (R1 + R2)",
+            "Einsetzen:  U1 = {Uges} V × {R1} / ({R1} + {R2})",
+            "Berechnung:  U1 = {result} V"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Parallelschaltung",
+      "id": "parallel",
+      "circuit_type": "parallel",
+      "formulas": [
+        {
+          "id": "parallel_r",
+          "name": "Gesamtwiderstand (2 Widerstände)",
+          "solve_for": "R_ges",
+          "expression": "1 / (1/R1 + 1/R2)",
+          "chain_formula": "R_ges = R1∥R2",
+          "display_template": "R_ges = {R1}∥{R2}",
+          "variables": [
+            {"name": "R1", "unit": "Ω", "description": "Widerstand 1"},
+            {"name": "R2", "unit": "Ω", "description": "Widerstand 2"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Gesamtwiderstand",
+          "steps": [
+            "Parallelschaltung:  1/R_ges = 1/R1 + 1/R2",
+            "Kehrwerte:  1/{R1} + 1/{R2} = {inv_R1} + {inv_R2} = {inv_sum}",
+            "Umkehren:  R_ges = {result} Ω"
+          ]
+        },
+        {
+          "id": "parallel_r_product",
+          "name": "Gesamtwiderstand  R1×R2/(R1+R2)",
+          "solve_for": "R_ges",
+          "expression": "R1 * R2 / (R1 + R2)",
+          "chain_formula": "R_ges = (R1×R2)/(R1+R2)",
+          "display_template": "R_ges = ({R1}×{R2})/(R1+{R2})",
+          "variables": [
+            {"name": "R1", "unit": "Ω", "description": "Widerstand 1"},
+            {"name": "R2", "unit": "Ω", "description": "Widerstand 2"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Gesamtwiderstand (Produktformel)",
+          "steps": [
+            "Produktformel:  R_ges = (R1 × R2) / (R1 + R2)",
+            "Zähler: {R1} × {R2} = ...",
+            "Berechnung:  R_ges = {result} Ω"
+          ]
+        },
+        {
+          "id": "parallel_r3",
+          "name": "Gesamtwiderstand (3 Widerstände)",
+          "solve_for": "R_ges",
+          "expression": "1 / (1/R1 + 1/R2 + 1/R3)",
+          "chain_formula": "R_ges = R1∥R2∥R3",
+          "display_template": "R_ges = {R1}∥{R2}∥{R3}",
+          "variables": [
+            {"name": "R1", "unit": "Ω", "description": "Widerstand 1"},
+            {"name": "R2", "unit": "Ω", "description": "Widerstand 2"},
+            {"name": "R3", "unit": "Ω", "description": "Widerstand 3"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Gesamtwiderstand",
+          "steps": [
+            "Parallelschaltung:  1/R_ges = 1/R1 + 1/R2 + 1/R3",
+            "Kehrwerte addieren...",
+            "R_ges = {result} Ω"
+          ]
+        },
+        {
+          "id": "parallel_i",
+          "name": "Gesamtstrom (Knotensatz)",
+          "solve_for": "I_ges",
+          "expression": "I1 + I2",
+          "chain_formula": "I_ges = I1 + I2",
+          "display_template": "I_ges = {I1} + {I2}",
+          "variables": [
+            {"name": "I1", "unit": "A", "description": "Teilstrom 1"},
+            {"name": "I2", "unit": "A", "description": "Teilstrom 2"}
+          ],
+          "result_unit": "A",
+          "result_description": "Gesamtstrom",
+          "steps": [
+            "Knotensatz (KCL):  I_ges = I1 + I2",
+            "Einsetzen:  I_ges = {I1} A + {I2} A",
+            "Berechnung:  I_ges = {result} A"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Kapazität & RC",
+      "id": "capacitor",
+      "circuit_type": "capacitor",
+      "formulas": [
+        {
+          "id": "cap_q",
+          "name": "Ladung  Q = C × U",
+          "solve_for": "Q",
+          "expression": "C * U",
+          "chain_formula": "Q = C × U",
+          "display_template": "Q = {C} × {U}",
+          "variables": [
+            {"name": "C", "unit": "F", "description": "Kapazität"},
+            {"name": "U", "unit": "V", "description": "Spannung"}
+          ],
+          "result_unit": "C",
+          "result_description": "Ladung",
+          "steps": [
+            "Kondensator:  Q = C × U",
+            "Einsetzen:  Q = {C} F × {U} V",
+            "Berechnung:  Q = {result} C"
+          ]
+        },
+        {
+          "id": "cap_u",
+          "name": "Spannung  U = Q / C",
+          "solve_for": "U",
+          "expression": "Q / C",
+          "chain_formula": "U = Q / C",
+          "display_template": "U = {Q} / {C}",
+          "variables": [
+            {"name": "Q", "unit": "C", "description": "Ladung"},
+            {"name": "C", "unit": "F", "description": "Kapazität"}
+          ],
+          "result_unit": "V",
+          "result_description": "Spannung am Kondensator",
+          "steps": [
+            "Kondensatorspannung:  U = Q / C",
+            "Einsetzen:  U = {Q} C / {C} F",
+            "Berechnung:  U = {result} V"
+          ]
+        },
+        {
+          "id": "cap_energy",
+          "name": "Energie  W = ½ × C × U²",
+          "solve_for": "W",
+          "expression": "0.5 * C * U * U",
+          "chain_formula": "W = ½ × C × U²",
+          "display_template": "W = ½ × {C} × {U}²",
+          "variables": [
+            {"name": "C", "unit": "F", "description": "Kapazität"},
+            {"name": "U", "unit": "V", "description": "Spannung"}
+          ],
+          "result_unit": "J",
+          "result_description": "Gespeicherte Energie",
+          "steps": [
+            "Kondensator Energie:  W = ½ × C × U²",
+            "Quadrat:  U² = {U_sq} V²",
+            "Berechnung:  W = {result} J"
+          ]
+        },
+        {
+          "id": "rc_tau",
+          "name": "Zeitkonstante  τ = R × C",
+          "solve_for": "tau",
+          "expression": "R * C",
+          "chain_formula": "τ = R × C",
+          "display_template": "τ = {R} × {C}",
+          "variables": [
+            {"name": "R", "unit": "Ω", "description": "Widerstand"},
+            {"name": "C", "unit": "F", "description": "Kapazität"}
+          ],
+          "result_unit": "s",
+          "result_description": "RC-Zeitkonstante",
+          "steps": [
+            "RC-Zeitkonstante:  τ = R × C",
+            "Einsetzen:  τ = {R} Ω × {C} F",
+            "Berechnung:  τ = {result} s",
+            "Nach 5τ ist der Kondensator zu 99,3 % geladen/entladen"
+          ]
+        },
+        {
+          "id": "cap_series",
+          "name": "Kapazität Serie  C_ges = C1·C2/(C1+C2)",
+          "solve_for": "C_ges",
+          "expression": "1 / (1/C1 + 1/C2)",
+          "chain_formula": "C_ges = C1∥C2",
+          "display_template": "C_ges = {C1}∥{C2}",
+          "variables": [
+            {"name": "C1", "unit": "F", "description": "Kapazität 1"},
+            {"name": "C2", "unit": "F", "description": "Kapazität 2"}
+          ],
+          "result_unit": "F",
+          "result_description": "Gesamtkapazität (Reihenschaltung)",
+          "steps": [
+            "Kondensatoren in Reihe:  1/C_ges = 1/C1 + 1/C2",
+            "Kehrwerte:  {inv_C1} + {inv_C2} = {inv_sum}",
+            "Umkehren:  C_ges = {result} F"
+          ]
+        },
+        {
+          "id": "cap_parallel",
+          "name": "Kapazität Parallel  C_ges = C1 + C2",
+          "solve_for": "C_ges",
+          "expression": "C1 + C2",
+          "chain_formula": "C_ges = C1 + C2",
+          "display_template": "C_ges = {C1} + {C2}",
+          "variables": [
+            {"name": "C1", "unit": "F", "description": "Kapazität 1"},
+            {"name": "C2", "unit": "F", "description": "Kapazität 2"}
+          ],
+          "result_unit": "F",
+          "result_description": "Gesamtkapazität (Parallelschaltung)",
+          "steps": [
+            "Kondensatoren parallel:  C_ges = C1 + C2",
+            "Einsetzen:  C_ges = {C1} F + {C2} F",
+            "Berechnung:  C_ges = {result} F"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Induktivität & RL",
+      "id": "inductor",
+      "circuit_type": "inductor",
+      "formulas": [
+        {
+          "id": "ind_energy",
+          "name": "Energie  W = ½ × L × I²",
+          "solve_for": "W",
+          "expression": "0.5 * L * I * I",
+          "chain_formula": "W = ½ × L × I²",
+          "display_template": "W = ½ × {L} × {I}²",
+          "variables": [
+            {"name": "L", "unit": "H", "description": "Induktivität"},
+            {"name": "I", "unit": "A", "description": "Stromstärke"}
+          ],
+          "result_unit": "J",
+          "result_description": "Gespeicherte Energie",
+          "steps": [
+            "Spule Energie:  W = ½ × L × I²",
+            "Quadrat:  I² = {I_sq} A²",
+            "Berechnung:  W = {result} J"
+          ]
+        },
+        {
+          "id": "rl_tau",
+          "name": "Zeitkonstante  τ = L / R",
+          "solve_for": "tau",
+          "expression": "L / R",
+          "chain_formula": "τ = L / R",
+          "display_template": "τ = {L} / {R}",
+          "variables": [
+            {"name": "L", "unit": "H", "description": "Induktivität"},
+            {"name": "R", "unit": "Ω", "description": "Widerstand"}
+          ],
+          "result_unit": "s",
+          "result_description": "RL-Zeitkonstante",
+          "steps": [
+            "RL-Zeitkonstante:  τ = L / R",
+            "Einsetzen:  τ = {L} H / {R} Ω",
+            "Berechnung:  τ = {result} s"
+          ]
+        },
+        {
+          "id": "ind_xl",
+          "name": "Induktiver Widerstand  Xl = 2π·f·L",
+          "solve_for": "Xl",
+          "expression": "2 * 3.14159265 * f * L",
+          "chain_formula": "Xl = 2π × f × L",
+          "display_template": "Xl = 2π × {f} × {L}",
+          "variables": [
+            {"name": "f", "unit": "Hz", "description": "Frequenz"},
+            {"name": "L", "unit": "H",  "description": "Induktivität"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Induktiver Widerstand",
+          "steps": [
+            "Induktiver Widerstand:  Xl = 2π × f × L",
+            "Einsetzen:  Xl = 2π × {f} Hz × {L} H",
+            "Berechnung:  Xl = {result} Ω"
+          ]
+        },
+        {
+          "id": "ind_series",
+          "name": "Induktivitäten Reihe  L_ges = L1 + L2",
+          "solve_for": "L_ges",
+          "expression": "L1 + L2",
+          "chain_formula": "L_ges = L1 + L2",
+          "display_template": "L_ges = {L1} + {L2}",
+          "variables": [
+            {"name": "L1", "unit": "H", "description": "Induktivität 1"},
+            {"name": "L2", "unit": "H", "description": "Induktivität 2"}
+          ],
+          "result_unit": "H",
+          "result_description": "Gesamtinduktivität (Reihe)",
+          "steps": [
+            "Spulen in Reihe:  L_ges = L1 + L2",
+            "Einsetzen:  L_ges = {L1} H + {L2} H",
+            "Berechnung:  L_ges = {result} H"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Frequenz & Signale",
+      "id": "frequency",
+      "circuit_type": "frequency",
+      "formulas": [
+        {
+          "id": "freq_period",
+          "name": "Periode  T = 1 / f",
+          "solve_for": "T",
+          "expression": "1 / f",
+          "chain_formula": "T = 1 / f",
+          "display_template": "T = 1 / {f}",
+          "variables": [
+            {"name": "f", "unit": "Hz", "description": "Frequenz"}
+          ],
+          "result_unit": "s",
+          "result_description": "Periodendauer",
+          "steps": [
+            "Periode:  T = 1 / f",
+            "Einsetzen:  T = 1 / {f} Hz",
+            "Berechnung:  T = {result} s"
+          ]
+        },
+        {
+          "id": "freq_from_period",
+          "name": "Frequenz  f = 1 / T",
+          "solve_for": "f",
+          "expression": "1 / T",
+          "chain_formula": "f = 1 / T",
+          "display_template": "f = 1 / {T}",
+          "variables": [
+            {"name": "T", "unit": "s", "description": "Periodendauer"}
+          ],
+          "result_unit": "Hz",
+          "result_description": "Frequenz",
+          "steps": [
+            "Frequenz:  f = 1 / T",
+            "Einsetzen:  f = 1 / {T} s",
+            "Berechnung:  f = {result} Hz"
+          ]
+        },
+        {
+          "id": "freq_omega",
+          "name": "Kreisfrequenz  ω = 2π × f",
+          "solve_for": "omega",
+          "expression": "2 * 3.14159265 * f",
+          "chain_formula": "ω = 2π × f",
+          "display_template": "ω = 2π × {f}",
+          "variables": [
+            {"name": "f", "unit": "Hz", "description": "Frequenz"}
+          ],
+          "result_unit": "rad/s",
+          "result_description": "Kreisfrequenz",
+          "steps": [
+            "Kreisfrequenz:  ω = 2π × f",
+            "Einsetzen:  ω = 2π × {f} Hz",
+            "Berechnung:  ω = {result} rad/s"
+          ]
+        },
+        {
+          "id": "resonance_lc",
+          "name": "Resonanzfrequenz  f₀ = 1/(2π√LC)",
+          "solve_for": "f0",
+          "expression": "1 / (2 * 3.14159265 * sqrt(L * C))",
+          "chain_formula": "f₀ = 1 / (2π·√LC)",
+          "display_template": "f₀ = 1/(2π√({L}·{C}))",
+          "variables": [
+            {"name": "L", "unit": "H", "description": "Induktivität"},
+            {"name": "C", "unit": "F", "description": "Kapazität"}
+          ],
+          "result_unit": "Hz",
+          "result_description": "Resonanzfrequenz",
+          "steps": [
+            "LC-Resonanzfrequenz:  f₀ = 1 / (2π × √(L × C))",
+            "Produkt:  L×C = {LC_product}",
+            "Wurzel:  √(L×C) = {sqrt_LC}",
+            "Berechnung:  f₀ = {result} Hz"
+          ]
+        },
+        {
+          "id": "cap_xc",
+          "name": "Kapazitiver Widerstand  Xc = 1/(2π·f·C)",
+          "solve_for": "Xc",
+          "expression": "1 / (2 * 3.14159265 * f * C)",
+          "chain_formula": "Xc = 1 / (2π·f·C)",
+          "display_template": "Xc = 1/(2π·{f}·{C})",
+          "variables": [
+            {"name": "f", "unit": "Hz", "description": "Frequenz"},
+            {"name": "C", "unit": "F",  "description": "Kapazität"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Kapazitiver Widerstand",
+          "steps": [
+            "Kapazitiver Widerstand:  Xc = 1 / (2π × f × C)",
+            "Einsetzen:  Xc = 1 / (2π × {f} Hz × {C} F)",
+            "Berechnung:  Xc = {result} Ω"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Transistor (BJT)",
+      "id": "bjt",
+      "circuit_type": "bjt",
+      "formulas": [
+        {
+          "id": "bjt_ic",
+          "name": "Kollektorstrom  IC = β × IB",
+          "solve_for": "IC",
+          "expression": "beta * IB",
+          "chain_formula": "IC = β × IB",
+          "display_template": "IC = {beta} × {IB}",
+          "variables": [
+            {"name": "beta", "unit": "",  "description": "Stromverstärkung β (hFE)"},
+            {"name": "IB",   "unit": "A", "description": "Basisstrom"}
+          ],
+          "result_unit": "A",
+          "result_description": "Kollektorstrom",
+          "steps": [
+            "BJT Stromverstärkung:  IC = β × IB",
+            "Einsetzen:  IC = {beta} × {IB} A",
+            "Berechnung:  IC = {result} A"
+          ]
+        },
+        {
+          "id": "bjt_ie",
+          "name": "Emitterstrom  IE = IC + IB",
+          "solve_for": "IE",
+          "expression": "IC + IB",
+          "chain_formula": "IE = IC + IB",
+          "display_template": "IE = {IC} + {IB}",
+          "variables": [
+            {"name": "IC", "unit": "A", "description": "Kollektorstrom"},
+            {"name": "IB", "unit": "A", "description": "Basisstrom"}
+          ],
+          "result_unit": "A",
+          "result_description": "Emitterstrom",
+          "steps": [
+            "Knotensatz am Transistor:  IE = IC + IB",
+            "Einsetzen:  IE = {IC} A + {IB} A",
+            "Berechnung:  IE = {result} A"
+          ]
+        },
+        {
+          "id": "bjt_beta",
+          "name": "Verstärkung  β = IC / IB",
+          "solve_for": "beta",
+          "expression": "IC / IB",
+          "chain_formula": "β = IC / IB",
+          "display_template": "β = {IC} / {IB}",
+          "variables": [
+            {"name": "IC", "unit": "A", "description": "Kollektorstrom"},
+            {"name": "IB", "unit": "A", "description": "Basisstrom"}
+          ],
+          "result_unit": "",
+          "result_description": "Stromverstärkung β (hFE)",
+          "steps": [
+            "Stromverstärkung:  β = IC / IB",
+            "Einsetzen:  β = {IC} A / {IB} A",
+            "Berechnung:  β = {result}"
+          ]
+        },
+        {
+          "id": "bjt_rb",
+          "name": "Basiswiderstand  RB = (UB − UBE)/IB",
+          "solve_for": "RB",
+          "expression": "(UB - UBE) / IB",
+          "chain_formula": "RB = (UB − UBE) / IB",
+          "display_template": "RB = ({UB} − {UBE}) / {IB}",
+          "variables": [
+            {"name": "UB",  "unit": "V", "description": "Betriebsspannung"},
+            {"name": "UBE", "unit": "V", "description": "Basis-Emitter-Spannung (typ. 0,7 V)"},
+            {"name": "IB",  "unit": "A", "description": "Basisstrom"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Basiswiderstand",
+          "steps": [
+            "Basiswiderstand:  RB = (UB − UBE) / IB",
+            "Differenz:  UB − UBE = {U_diff} V",
+            "Berechnung:  RB = {result} Ω"
+          ]
+        },
+        {
+          "id": "bjt_rc_switch",
+          "name": "Schalter: RC = (UCC − UCE_sat)/IC",
+          "solve_for": "RC",
+          "expression": "(UCC - UCEsat) / IC",
+          "chain_formula": "RC = (UCC − UCE_sat) / IC",
+          "display_template": "RC = ({UCC} − {UCEsat}) / {IC}",
+          "variables": [
+            {"name": "UCC",    "unit": "V", "description": "Versorgungsspannung"},
+            {"name": "UCEsat", "unit": "V", "description": "UCE Sättigungsspannung (typ. 0,2 V)"},
+            {"name": "IC",     "unit": "A", "description": "Kollektorstrom (Sättigung)"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Kollektorwiderstand",
+          "steps": [
+            "Transistorschalter RC:  RC = (UCC − UCE_sat) / IC",
+            "Differenz:  UCC − UCE_sat = ...",
+            "Berechnung:  RC = {result} Ω"
+          ]
+        },
+        {
+          "id": "bjt_pv",
+          "name": "Verlustleistung  Pv = UCE × IC",
+          "solve_for": "Pv",
+          "expression": "UCE * IC",
+          "chain_formula": "Pv = UCE × IC",
+          "display_template": "Pv = {UCE} × {IC}",
+          "variables": [
+            {"name": "UCE", "unit": "V", "description": "Kollektor-Emitter-Spannung"},
+            {"name": "IC",  "unit": "A", "description": "Kollektorstrom"}
+          ],
+          "result_unit": "W",
+          "result_description": "Verlustleistung am Transistor",
+          "steps": [
+            "Transistorverlustleistung:  Pv = UCE × IC",
+            "Einsetzen:  Pv = {UCE} V × {IC} A",
+            "Berechnung:  Pv = {result} W"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Operationsverstärker",
+      "id": "opamp",
+      "circuit_type": "opamp",
+      "formulas": [
+        {
+          "id": "opamp_inv",
+          "name": "Invertierend  V = −Rf / R1",
+          "solve_for": "V",
+          "expression": "-(Rf / R1)",
+          "chain_formula": "V = −Rf / R1",
+          "display_template": "V = −{Rf} / {R1}",
+          "variables": [
+            {"name": "Rf", "unit": "Ω", "description": "Gegenkopplungswiderstand"},
+            {"name": "R1", "unit": "Ω", "description": "Eingangswiderstand"}
+          ],
+          "result_unit": "",
+          "result_description": "Spannungsverstärkung (invertierend)",
+          "steps": [
+            "Invertierender OPV:  V = −Rf / R1",
+            "Einsetzen:  V = −{Rf} Ω / {R1} Ω",
+            "Quotient:  V = −{ratio}",
+            "Berechnung:  V = {result}",
+            "Negatives Vorzeichen = Phasenumkehr um 180°"
+          ]
+        },
+        {
+          "id": "opamp_noninv",
+          "name": "Nicht-Invertierend  V = 1 + Rf/R1",
+          "solve_for": "V",
+          "expression": "1 + (Rf / R1)",
+          "chain_formula": "V = 1 + Rf/R1",
+          "display_template": "V = 1 + {Rf} / {R1}",
+          "variables": [
+            {"name": "Rf", "unit": "Ω", "description": "Gegenkopplungswiderstand"},
+            {"name": "R1", "unit": "Ω", "description": "Widerstand gegen Masse"}
+          ],
+          "result_unit": "",
+          "result_description": "Spannungsverstärkung (nicht-invertierend)",
+          "steps": [
+            "Nicht-invertierender OPV:  V = 1 + Rf / R1",
+            "Einsetzen:  V = 1 + {Rf} / {R1}",
+            "Quotient:  Rf/R1 = {ratio}",
+            "Berechnung:  V = {result}"
+          ]
+        },
+        {
+          "id": "opamp_uout",
+          "name": "Ausgangsspannung  Uout = V × Uin",
+          "solve_for": "Uout",
+          "expression": "V * Uin",
+          "chain_formula": "Uout = V × Uin",
+          "display_template": "Uout = {V} × {Uin}",
+          "variables": [
+            {"name": "V",   "unit": "",  "description": "Spannungsverstärkung"},
+            {"name": "Uin", "unit": "V", "description": "Eingangsspannung"}
+          ],
+          "result_unit": "V",
+          "result_description": "Ausgangsspannung",
+          "steps": [
+            "Ausgangsspannung:  Uout = V × Uin",
+            "Einsetzen:  Uout = {V} × {Uin} V",
+            "Berechnung:  Uout = {result} V"
+          ]
+        },
+        {
+          "id": "opamp_rf_inv",
+          "name": "Rf aus Verstärkung  Rf = |V| × R1",
+          "solve_for": "Rf",
+          "expression": "V * R1",
+          "chain_formula": "Rf = |V| × R1",
+          "display_template": "Rf = {V} × {R1}",
+          "variables": [
+            {"name": "V",  "unit": "",  "description": "Gewünschte Verstärkung (Betrag)"},
+            {"name": "R1", "unit": "Ω", "description": "Eingangswiderstand R1"}
+          ],
+          "result_unit": "Ω",
+          "result_description": "Gegenkopplungswiderstand Rf",
+          "steps": [
+            "Rf berechnen:  Rf = |V| × R1",
+            "Einsetzen:  Rf = {V} × {R1} Ω",
+            "Berechnung:  Rf = {result} Ω"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "OPV: Invertierend",
+      "id": "opamp_inv",
+      "circuit_type": "opamp_inv",
+      "formulas": [
+        {
+          "id": "oi_ua",  "name": "Ua = −(R2/R1) × Ue",
+          "solve_for": "Ua", "expression": "-(R2/R1)*Ue",
+          "chain_formula": "Ua = −(R2/R1)·Ue",
+          "display_template": "Ua = −({R2}/{R1}) × {Ue}",
+          "variables": [
+            {"name":"R2","unit":"Ω","description":"Gegenkopplungswiderstand"},
+            {"name":"R1","unit":"Ω","description":"Eingangswiderstand"},
+            {"name":"Ue","unit":"V","description":"Eingangsspannung"}
+          ],
+          "result_unit":"V","result_description":"Ausgangsspannung (invertiert)",
+          "steps":["Invertierend: Ua = −(R2/R1) × Ue","Quotient R2/R1 = {ratio}","Einsetzen: Ua = −{ratio} × {Ue} V","Ergebnis: Ua = {result} V"]
+        },
+        {
+          "id": "oi_v",  "name": "Verstärkung  V = −R2/R1",
+          "solve_for": "V", "expression": "-(R2/R1)",
+          "chain_formula": "V = −R2/R1",
+          "display_template": "V = −{R2} / {R1}",
+          "variables": [
+            {"name":"R2","unit":"Ω","description":"Gegenkopplungswiderstand"},
+            {"name":"R1","unit":"Ω","description":"Eingangswiderstand"}
+          ],
+          "result_unit":"","result_description":"Spannungsverstärkung (negativ = Inversion)",
+          "steps":["Invertierender OPV: V = −R2/R1","Einsetzen: V = −{R2}/{R1}","V = {result}  (negatives Vorzeichen = Phasenumkehr 180°)"]
+        },
+        {
+          "id": "oi_ue", "name": "Eingangsspannung  Ue = −Ua × R1/R2",
+          "solve_for": "Ue", "expression": "-Ua*R1/R2",
+          "chain_formula": "Ue = −Ua·R1/R2",
+          "display_template": "Ue = −{Ua} × {R1}/{R2}",
+          "variables": [
+            {"name":"Ua","unit":"V","description":"Ausgangsspannung"},
+            {"name":"R1","unit":"Ω","description":"Eingangswiderstand"},
+            {"name":"R2","unit":"Ω","description":"Gegenkopplungswiderstand"}
+          ],
+          "result_unit":"V","result_description":"Eingangsspannung",
+          "steps":["Umgestellt: Ue = −Ua × R1/R2","Einsetzen: Ue = −{Ua} × {R1}/{R2}","Ue = {result} V"]
+        },
+        {
+          "id": "oi_r2", "name": "R2 aus V und R1  R2 = |V| × R1",
+          "solve_for": "R2", "expression": "-V*R1",
+          "chain_formula": "R2 = |V| × R1",
+          "display_template": "R2 = |{V}| × {R1}",
+          "variables": [
+            {"name":"V", "unit":"",  "description":"Verstärkung (negativer Wert)"},
+            {"name":"R1","unit":"Ω", "description":"Eingangswiderstand R1"}
+          ],
+          "result_unit":"Ω","result_description":"Gegenkopplungswiderstand R2",
+          "steps":["R2 = |V| × R1","Einsetzen: R2 = |{V}| × {R1} Ω","R2 = {result} Ω"]
+        },
+        {
+          "id": "oi_r1", "name": "R1 aus V und R2  R1 = R2/|V|",
+          "solve_for": "R1", "expression": "-R2/V",
+          "chain_formula": "R1 = R2/|V|",
+          "display_template": "R1 = {R2} / |{V}|",
+          "variables": [
+            {"name":"R2","unit":"Ω","description":"Gegenkopplungswiderstand R2"},
+            {"name":"V", "unit":"", "description":"Verstärkung (negativer Wert)"}
+          ],
+          "result_unit":"Ω","result_description":"Eingangswiderstand R1",
+          "steps":["R1 = R2/|V|","Einsetzen: R1 = {R2}/{V}","R1 = {result} Ω"]
+        }
+      ]
+    },
+    {
+      "name": "OPV: Nicht-Invertierend",
+      "id": "opamp_noninv",
+      "circuit_type": "opamp_noninv",
+      "formulas": [
+        {
+          "id": "oni_ua", "name": "Ua = (1 + R2/R1) × Ue",
+          "solve_for": "Ua", "expression": "(1+R2/R1)*Ue",
+          "chain_formula": "Ua = (1+R2/R1)·Ue",
+          "display_template": "Ua = (1 + {R2}/{R1}) × {Ue}",
+          "variables": [
+            {"name":"R2","unit":"Ω","description":"Gegenkopplungswiderstand"},
+            {"name":"R1","unit":"Ω","description":"Widerstand gegen GND"},
+            {"name":"Ue","unit":"V","description":"Eingangsspannung"}
+          ],
+          "result_unit":"V","result_description":"Ausgangsspannung",
+          "steps":["Nicht-invertierend: Ua = (1 + R2/R1) × Ue","Quotient R2/R1 = {ratio}","V = 1 + {ratio}","Ua = {result} V"]
+        },
+        {
+          "id": "oni_v",  "name": "Verstärkung  V = 1 + R2/R1",
+          "solve_for": "V", "expression": "1+R2/R1",
+          "chain_formula": "V = 1 + R2/R1",
+          "display_template": "V = 1 + {R2}/{R1}",
+          "variables": [
+            {"name":"R2","unit":"Ω","description":"Gegenkopplungswiderstand"},
+            {"name":"R1","unit":"Ω","description":"Widerstand gegen GND"}
+          ],
+          "result_unit":"","result_description":"Spannungsverstärkung (≥1, gleiche Phase)",
+          "steps":["Nicht-invertierend: V = 1 + R2/R1","Einsetzen: V = 1 + {R2}/{R1}","V = {result}"]
+        },
+        {
+          "id": "oni_ue", "name": "Eingangsspannung  Ue = Ua/V",
+          "solve_for": "Ue", "expression": "Ua/V",
+          "chain_formula": "Ue = Ua/V",
+          "display_template": "Ue = {Ua} / {V}",
+          "variables": [
+            {"name":"Ua","unit":"V","description":"Ausgangsspannung"},
+            {"name":"V", "unit":"", "description":"Spannungsverstärkung"}
+          ],
+          "result_unit":"V","result_description":"Eingangsspannung",
+          "steps":["Ue = Ua / V","Ue = {Ua} / {V}","Ue = {result} V"]
+        },
+        {
+          "id": "oni_r2", "name": "R2 = (V−1) × R1",
+          "solve_for": "R2", "expression": "(V-1)*R1",
+          "chain_formula": "R2 = (V−1)·R1",
+          "display_template": "R2 = ({V}−1) × {R1}",
+          "variables": [
+            {"name":"V", "unit":"", "description":"Spannungsverstärkung"},
+            {"name":"R1","unit":"Ω","description":"Widerstand gegen GND"}
+          ],
+          "result_unit":"Ω","result_description":"Gegenkopplungswiderstand",
+          "steps":["R2 = (V−1) × R1","Einsetzen: R2 = ({V}−1) × {R1}","R2 = {result} Ω"]
+        },
+        {
+          "id": "oni_r1", "name": "R1 = R2/(V−1)",
+          "solve_for": "R1", "expression": "R2/(V-1)",
+          "chain_formula": "R1 = R2/(V−1)",
+          "display_template": "R1 = {R2} / ({V}−1)",
+          "variables": [
+            {"name":"R2","unit":"Ω","description":"Gegenkopplungswiderstand"},
+            {"name":"V", "unit":"", "description":"Spannungsverstärkung"}
+          ],
+          "result_unit":"Ω","result_description":"Widerstand gegen GND",
+          "steps":["R1 = R2 / (V−1)","R1 = {R2} / ({V}−1)","R1 = {result} Ω"]
+        }
+      ]
+    },
+    {
+      "name": "OPV: Spannungsfolger",
+      "id": "opamp_follower",
+      "circuit_type": "opamp_follower",
+      "formulas": [
+        {
+          "id": "of_ua", "name": "Ua = Ue (Spannungsfolger / Buffer)",
+          "solve_for": "Ua", "expression": "Ue",
+          "chain_formula": "Ua = Ue",
+          "display_template": "Ua = {Ue}",
+          "variables": [
+            {"name":"Ue","unit":"V","description":"Eingangsspannung"}
+          ],
+          "result_unit":"V","result_description":"Ausgangsspannung (V=1, hohe Eingangsimpedanz)",
+          "steps":["Spannungsfolger: Ua = Ue","V = 1, keine Verstärkung","Verwendung: Impedanzwandlung","Ua = {result} V"]
+        }
+      ]
+    },
+    {
+      "name": "OPV: Summierverstärker",
+      "id": "opamp_summer",
+      "circuit_type": "opamp_summer",
+      "formulas": [
+        {
+          "id": "os_ua2", "name": "Ua = −Rf/R × (Ue1 + Ue2)  (gleiche R)",
+          "solve_for": "Ua", "expression": "-(Rf/R)*(Ue1+Ue2)",
+          "chain_formula": "Ua = −(Rf/R)·(Ue1+Ue2)",
+          "display_template": "Ua = −({Rf}/{R}) × ({Ue1}+{Ue2})",
+          "variables": [
+            {"name":"Rf", "unit":"Ω","description":"Gegenkopplungswiderstand"},
+            {"name":"R",  "unit":"Ω","description":"Eingangswiderstand (gleich für alle Eingänge)"},
+            {"name":"Ue1","unit":"V","description":"Eingangsspannung 1"},
+            {"name":"Ue2","unit":"V","description":"Eingangsspannung 2"}
+          ],
+          "result_unit":"V","result_description":"Gewichtete Summe (invertiert)",
+          "steps":["Summierverstärker: Ua = −(Rf/R)·(Ue1+Ue2)","Einsetzen und berechnen","Ua = {result} V"]
+        },
+        {
+          "id": "os_ua2eq", "name": "Ua = −(Ue1 + Ue2)  (Rf=R, gleich)",
+          "solve_for": "Ua", "expression": "-(Ue1+Ue2)",
+          "chain_formula": "Ua = −(Ue1+Ue2)",
+          "display_template": "Ua = −({Ue1} + {Ue2})",
+          "variables": [
+            {"name":"Ue1","unit":"V","description":"Eingangsspannung 1"},
+            {"name":"Ue2","unit":"V","description":"Eingangsspannung 2"}
+          ],
+          "result_unit":"V","result_description":"Invertierte Summe (bei Rf=R)",
+          "steps":["Summierverstärker mit Rf=R: Ua = −(Ue1+Ue2)","Ua = {result} V"]
+        },
+        {
+          "id": "os_ua3eq", "name": "Ua = −(Ue1+Ue2+Ue3)  (3 Eingänge, gleich)",
+          "solve_for": "Ua", "expression": "-(Ue1+Ue2+Ue3)",
+          "chain_formula": "Ua = −(Ue1+Ue2+Ue3)",
+          "display_template": "Ua = −({Ue1}+{Ue2}+{Ue3})",
+          "variables": [
+            {"name":"Ue1","unit":"V","description":"Eingangsspannung 1"},
+            {"name":"Ue2","unit":"V","description":"Eingangsspannung 2"},
+            {"name":"Ue3","unit":"V","description":"Eingangsspannung 3"}
+          ],
+          "result_unit":"V","result_description":"Invertierte Summe von 3 Eingängen (Rf=R)",
+          "steps":["Ua = −(Ue1+Ue2+Ue3)","Ua = {result} V"]
+        }
+      ]
+    },
+    {
+      "name": "OPV: Differenzverstärker",
+      "id": "opamp_diff",
+      "circuit_type": "opamp_diff",
+      "formulas": [
+        {
+          "id": "od_ua", "name": "Ua = (R2/R1) × (Ue2 − Ue1)",
+          "solve_for": "Ua", "expression": "(R2/R1)*(Ue2-Ue1)",
+          "chain_formula": "Ua = (R2/R1)·(Ue2−Ue1)",
+          "display_template": "Ua = ({R2}/{R1}) × ({Ue2}−{Ue1})",
+          "variables": [
+            {"name":"R2", "unit":"Ω","description":"R2 (Verstärkungswiderstand)"},
+            {"name":"R1", "unit":"Ω","description":"R1 (Eingangswiderstand)"},
+            {"name":"Ue2","unit":"V","description":"Eingangsspannung an (+)"},
+            {"name":"Ue1","unit":"V","description":"Eingangsspannung an (−)"}
+          ],
+          "result_unit":"V","result_description":"Ausgangsspannung",
+          "steps":["Differenzverstärker: Ua = (R2/R1)·(Ue2−Ue1)","V = R2/R1 = {ratio}","Ua = {result} V"]
+        },
+        {
+          "id": "od_uaeq", "name": "Ua = Ue2 − Ue1  (R1=R2)",
+          "solve_for": "Ua", "expression": "Ue2-Ue1",
+          "chain_formula": "Ua = Ue2−Ue1",
+          "display_template": "Ua = {Ue2} − {Ue1}",
+          "variables": [
+            {"name":"Ue2","unit":"V","description":"Eingangsspannung an (+)"},
+            {"name":"Ue1","unit":"V","description":"Eingangsspannung an (−)"}
+          ],
+          "result_unit":"V","result_description":"Differenz (bei R1=R2)",
+          "steps":["Ua = Ue2 − Ue1 (R1=R2)","Ua = {result} V"]
+        },
+        {
+          "id": "od_v",  "name": "Verstärkung V = R2/R1",
+          "solve_for": "V", "expression": "R2/R1",
+          "chain_formula": "V = R2/R1",
+          "display_template": "V = {R2}/{R1}",
+          "variables": [
+            {"name":"R2","unit":"Ω","description":"R2"},
+            {"name":"R1","unit":"Ω","description":"R1"}
+          ],
+          "result_unit":"","result_description":"Differenzielle Verstärkung",
+          "steps":["V = R2/R1","V = {result}"]
+        }
+      ]
+    },
+    {
+      "name": "OPV: Integrierer",
+      "id": "opamp_integr",
+      "circuit_type": "opamp_integr",
+      "formulas": [
+        {
+          "id": "oint_tau", "name": "Zeitkonstante  τ = R × C",
+          "solve_for": "tau", "expression": "R*C",
+          "chain_formula": "τ = R × C",
+          "display_template": "τ = {R} × {C}",
+          "variables": [
+            {"name":"R","unit":"Ω","description":"Eingangswiderstand"},
+            {"name":"C","unit":"F","description":"Integrationskapazität"}
+          ],
+          "result_unit":"s","result_description":"Integrationszeitkonstante",
+          "steps":["Integrierer-Zeitkonstante: τ = R × C","τ = {result} s","Grenzfrequenz fg = 1/(2π·τ)"]
+        },
+        {
+          "id": "oint_fg", "name": "Grenzfrequenz  fg = 1/(2π·R·C)",
+          "solve_for": "fg", "expression": "1/(2*3.14159265*R*C)",
+          "chain_formula": "fg = 1/(2π·R·C)",
+          "display_template": "fg = 1/(2π·{R}·{C})",
+          "variables": [
+            {"name":"R","unit":"Ω","description":"Eingangswiderstand"},
+            {"name":"C","unit":"F","description":"Kapazität"}
+          ],
+          "result_unit":"Hz","result_description":"Grenzfrequenz des Integrierers",
+          "steps":["fg = 1 / (2π × R × C)","fg = {result} Hz","Unterhalb fg wirkt der OPV als Integrierer"]
+        },
+        {
+          "id": "oint_rate","name": "Ausgangsrate  Ua/t = −Ue/(R·C)",
+          "solve_for": "rate", "expression": "-Ue/(R*C)",
+          "chain_formula": "dUa/dt = −Ue/(R·C)",
+          "display_template": "dUa/dt = −{Ue}/(R·C)=−{Ue}/({R}·{C})",
+          "variables": [
+            {"name":"Ue","unit":"V","description":"Konstante Eingangsspannung"},
+            {"name":"R", "unit":"Ω","description":"Eingangswiderstand"},
+            {"name":"C", "unit":"F","description":"Integrationskapazität"}
+          ],
+          "result_unit":"V/s","result_description":"Ausgangsspannungsrate (Steigung)",
+          "steps":["Bei konstantem Ue: dUa/dt = −Ue/(R·C)","Einsetzen: dUa/dt = −{Ue}/({R}×{C})","Rate = {result} V/s"]
+        }
+      ]
+    },
+    {
+      "name": "OPV: Differenzierer",
+      "id": "opamp_differ",
+      "circuit_type": "opamp_differ",
+      "formulas": [
+        {
+          "id": "odf_ua", "name": "Ua = −R·C·(ΔUe/Δt)",
+          "solve_for": "Ua", "expression": "-R*C*rate",
+          "chain_formula": "Ua = −R·C·(ΔUe/Δt)",
+          "display_template": "Ua = −{R}·{C}·{rate}",
+          "variables": [
+            {"name":"R",   "unit":"Ω",   "description":"Gegenkopplungswiderstand"},
+            {"name":"C",   "unit":"F",   "description":"Eingangskapazität"},
+            {"name":"rate","unit":"V/s", "description":"Eingangsänderungsrate ΔUe/Δt"}
+          ],
+          "result_unit":"V","result_description":"Ausgangsspannung (proportional zu dUe/dt)",
+          "steps":["Differenzierer: Ua = −R·C·(dUe/dt)","Einsetzen: Ua = −{R}·{C}·{rate}","Ua = {result} V"]
+        },
+        {
+          "id": "odf_tau","name": "Zeitkonstante  τ = R·C",
+          "solve_for": "tau","expression":"R*C",
+          "chain_formula":"τ = R·C",
+          "display_template":"τ = {R}·{C}",
+          "variables":[
+            {"name":"R","unit":"Ω","description":"Gegenkopplungswiderstand"},
+            {"name":"C","unit":"F","description":"Eingangskapazität"}
+          ],
+          "result_unit":"s","result_description":"Differenzierer-Zeitkonstante",
+          "steps":["τ = R × C","τ = {result} s","Grenzfrequenz = 1/(2π·τ)"]
+        }
+      ]
+    },
+    {
+      "name": "OPV: Komparator / Schmitt-Trigger",
+      "id": "opamp_comp",
+      "circuit_type": "opamp_comp",
+      "formulas": [
+        {
+          "id": "oc_hyst","name": "Hysterese  ΔU = (R1/R2)·Usat",
+          "solve_for":"dU","expression":"(R1/R2)*Usat",
+          "chain_formula":"ΔU = (R1/R2)·Usat",
+          "display_template":"ΔU = ({R1}/{R2}) × {Usat}",
+          "variables":[
+            {"name":"R1",  "unit":"Ω","description":"Widerstand (Rückkopplung zum +)"},
+            {"name":"R2",  "unit":"Ω","description":"Widerstand (von Ausgang)"},
+            {"name":"Usat","unit":"V","description":"Sättigungsspannung des OPV"}
+          ],
+          "result_unit":"V","result_description":"Hysterese-Breite ΔU",
+          "steps":["Schmitt-Trigger Hysterese: ΔU = (R1/R2)·Usat","ΔU = {result} V"]
+        },
+        {
+          "id": "oc_utp", "name": "Obere Schaltschwelle  UTP = R1/(R1+R2)·Usat",
+          "solve_for":"UTP","expression":"R1/(R1+R2)*Usat",
+          "chain_formula":"UTP = R1/(R1+R2)·Usat",
+          "display_template":"UTP = {R1}/({R1}+{R2}) × {Usat}",
+          "variables":[
+            {"name":"R1",  "unit":"Ω","description":"Rückkopplungswiderstand"},
+            {"name":"R2",  "unit":"Ω","description":"Widerstand gegen GND"},
+            {"name":"Usat","unit":"V","description":"Sättigungsspannung"}
+          ],
+          "result_unit":"V","result_description":"Obere Schaltschwelle",
+          "steps":["UTP = R1/(R1+R2) × Usat","UTP = {result} V"]
+        },
+        {
+          "id": "oc_r1r2","name": "R1/R2 aus Hysterese  R1/R2 = ΔU/Usat",
+          "solve_for":"ratio","expression":"dU/Usat",
+          "chain_formula":"R1/R2 = ΔU/Usat",
+          "display_template":"R1/R2 = {dU}/{Usat}",
+          "variables":[
+            {"name":"dU",  "unit":"V","description":"Gewünschte Hysterese ΔU"},
+            {"name":"Usat","unit":"V","description":"Sättigungsspannung"}
+          ],
+          "result_unit":"","result_description":"Widerstandsverhältnis R1:R2",
+          "steps":["R1/R2 = ΔU / Usat","Verhältnis = {result}"]
+        }
+      ]
+    },
+    {
+      "name": "OPV: Instrumentenverstärker",
+      "id": "opamp_instr",
+      "circuit_type": "opamp_instr",
+      "formulas": [
+        {
+          "id": "oia_v",  "name": "Verstärkung  V = 1 + 2R/Rg",
+          "solve_for":"V","expression":"1+2*R/Rg",
+          "chain_formula":"V = 1 + 2R/Rg",
+          "display_template":"V = 1 + 2×{R}/{Rg}",
+          "variables":[
+            {"name":"R", "unit":"Ω","description":"Interne Widerstände (R2=R3=R)"},
+            {"name":"Rg","unit":"Ω","description":"Verstärkungs-Widerstand Rg"}
+          ],
+          "result_unit":"","result_description":"Differenzielle Verstärkung",
+          "steps":["Instrumentenverstärker: V = 1 + 2R/Rg","Einsetzen: V = 1 + 2×{R}/{Rg}","V = {result}"]
+        },
+        {
+          "id": "oia_rg","name": "Rg aus Verstärkung  Rg = 2R/(V−1)",
+          "solve_for":"Rg","expression":"2*R/(V-1)",
+          "chain_formula":"Rg = 2R/(V−1)",
+          "display_template":"Rg = 2×{R}/({V}−1)",
+          "variables":[
+            {"name":"R","unit":"Ω","description":"Interne Widerstände R"},
+            {"name":"V","unit":"", "description":"Gewünschte Verstärkung"}
+          ],
+          "result_unit":"Ω","result_description":"Verstärkungs-Widerstand Rg",
+          "steps":["Rg = 2R / (V−1)","Rg = 2×{R} / ({V}−1)","Rg = {result} Ω"]
+        }
+      ]
+    },
+    {
+      "name": "OPV: U↔I Wandler",
+      "id": "opamp_conv",
+      "circuit_type": "opamp_conv",
+      "formulas": [
+        {
+          "id": "ouv_il",  "name": "U→I: IL = Ue/R",
+          "solve_for":"IL","expression":"Ue/R",
+          "chain_formula":"IL = Ue/R",
+          "display_template":"IL = {Ue}/{R}",
+          "variables":[
+            {"name":"Ue","unit":"V","description":"Eingangsspannung"},
+            {"name":"R", "unit":"Ω","description":"Transkonduktanzwiderstand R"}
+          ],
+          "result_unit":"A","result_description":"Laststrom (unabhängig von Last)",
+          "steps":["Spannungs-Strom-Wandler: IL = Ue/R","IL = {Ue}/{R}","IL = {result} A"]
+        },
+        {
+          "id": "ouv_ua","name": "I→U: Ua = −IF × Rf  (Transimpedanz)",
+          "solve_for":"Ua","expression":"-IF*Rf",
+          "chain_formula":"Ua = −IF × Rf",
+          "display_template":"Ua = −{IF} × {Rf}",
+          "variables":[
+            {"name":"IF","unit":"A","description":"Eingangsstrom (z. B. Photodiode)"},
+            {"name":"Rf","unit":"Ω","description":"Transimpedanzwiderstand Rf"}
+          ],
+          "result_unit":"V","result_description":"Ausgangsspannung",
+          "steps":["Strom-Spannungs-Wandler: Ua = −IF × Rf","Ua = −{IF} × {Rf}","Ua = {result} V"]
+        },
+        {
+          "id": "ouv_rf","name": "Rf aus Ua und IF  Rf = |Ua/IF|",
+          "solve_for":"Rf","expression":"-Ua/IF",
+          "chain_formula":"Rf = −Ua/IF",
+          "display_template":"Rf = −{Ua}/{IF}",
+          "variables":[
+            {"name":"Ua","unit":"V","description":"Ausgangsspannung"},
+            {"name":"IF","unit":"A","description":"Eingangsstrom"}
+          ],
+          "result_unit":"Ω","result_description":"Transimpedanzwiderstand Rf",
+          "steps":["Rf = −Ua / IF","Rf = {result} Ω"]
+        }
+      ]
+    }
+  ]
+}

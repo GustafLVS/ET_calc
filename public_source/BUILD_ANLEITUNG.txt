@@ -1,0 +1,105 @@
+═══════════════════════════════════════════════════════════
+  ET-Rechner — Build-Anleitung
+═══════════════════════════════════════════════════════════
+
+VORAUSSETZUNGEN
+───────────────
+1. Qt Framework (Version 6.x empfohlen, 5.15 funktioniert auch)
+   Download: https://www.qt.io/download-open-source
+
+   Empfohlene Kits bei der Installation:
+   • Qt 6.7.x → MSVC 2019/2022 64-bit  (empfohlen)
+   • Qt 6.7.x → MinGW 64-bit           (alternativ, kein VS nötig)
+
+2. Für MSVC: Visual Studio Build Tools (kostenlos)
+   Download: https://visualstudio.microsoft.com/downloads/
+   → "Build Tools for Visual Studio"
+
+   ODER direkt Qt Creator verwenden (enthält MinGW)
+
+
+OPTION A: Qt Creator (einfachste Methode)
+──────────────────────────────────────────
+1. Qt Creator öffnen
+2. Datei → Öffnen → ET_calc.pro wählen
+3. Kit auswählen (Qt 6.x + MSVC oder MinGW)
+4. Grüner Play-Button → Kompilieren und Ausführen
+5. Für Release: Build-Modus auf "Release" stellen → Build
+
+
+OPTION B: Kommandozeile mit batch-Skript
+─────────────────────────────────────────
+1. build.bat ausführen
+   → Findet Qt automatisch an gängigen Orten
+   → Falls nicht gefunden: Pfad in build.bat anpassen
+
+
+OPTION C: Manuell (cmd / PowerShell)
+──────────────────────────────────────
+# Qt-Pfad zum PATH hinzufügen (Pfad anpassen):
+SET PATH=C:\Qt\6.7.0\msvc2022_64\bin;%PATH%
+
+# Visual Studio Umgebung laden (bei MSVC):
+"C:\Program Files\Microsoft Visual Studio\2022\BuildTools\VC\Auxiliary\Build\vcvars64.bat"
+
+# Build-Ordner erstellen und navigieren:
+mkdir build && cd build
+
+# qmake ausführen:
+qmake ..\ET_calc.pro CONFIG+=release
+
+# Kompilieren:
+nmake       (MSVC)
+  ODER
+mingw32-make -j4   (MinGW)
+
+# Qt DLLs deployen (für eigenständige .exe):
+windeployqt release\ET_calc.exe
+
+
+TYPISCHE QT-INSTALLATIONSPFADE
+────────────────────────────────
+C:\Qt\6.7.0\msvc2022_64\bin\qmake.exe
+C:\Qt\6.7.0\msvc2019_64\bin\qmake.exe
+C:\Qt\6.7.0\mingw_64\bin\qmake.exe
+C:\Qt\6.6.0\msvc2019_64\bin\qmake.exe
+
+
+NACH DEM BUILD
+───────────────
+Die fertige EXE liegt in:
+  build\release\ET_calc.exe   (MSVC Release)
+  build\ET_calc.exe           (Debug oder mingw)
+
+Für eine portable Version alle Dateien aus dem release-Ordner
+zusammen mit ET_calc.exe weitergeben (windeployqt kopiert die
+notwendigen Qt-DLLs automatisch).
+
+
+PROJEKTSTRUKTUR
+────────────────
+ET_calc.pro           → Qt Projektdatei
+main.cpp              → Einstiegspunkt
+mainwindow.h/cpp      → Hauptfenster (GUI)
+formula_engine.h/cpp  → Berechnungs-Engine (Ausdrucks-Auswertung)
+formula_library.h/cpp → Formel-Bibliothek (JSON-basiert)
+circuit_widget.h/cpp  → Schaltungsvisualisierung (QPainter)
+custom_formula_dialog.h/cpp → Dialog für eigene Formeln
+formulas.json         → Alle Standardformeln (erweiterbar)
+resources.qrc         → Qt Ressourcendatei
+
+
+FORMELN ERWEITERN
+──────────────────
+Methode 1: Im Programm
+  Menü "Formeln" → "Neue Formel hinzufügen..."
+  Formel eingeben → Speichern → Datei → "Eigene Formeln speichern"
+
+Methode 2: JSON bearbeiten
+  formulas.json öffnen und neue Einträge nach dem Muster
+  der vorhandenen Formeln hinzufügen.
+
+  Unterstützte Operatoren: + - * / ^ sqrt()
+  Platzhalter in Schritten: {VariableName}, {result}
+
+═══════════════════════════════════════════════════════════
